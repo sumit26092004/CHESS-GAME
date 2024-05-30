@@ -1,0 +1,67 @@
+body {
+  background-color: #282c34; /* Dark greyish color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin */
+}
+.heading {
+  color: #fff; /* White color for text */
+  text-align: center; /* Center align the text */
+  font-size: 36px; /* Adjust the font size */
+  position: fixed; /* Position fixed at the top */
+  top: 20px; /* Distance from the top */
+  left: 0; /* Align to the left */
+  right: 0; /* Align to the right */
+  z-index: 999; /* Ensure it's above other elements */
+}
+
+
+.chessboard {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-template-rows: repeat(8, minmax(0, 1fr));
+  width: 400px;
+  height: 400px;
+  transform: rotate(0deg);
+  border: 2px solid #fff; /* Optional: add a white border to the chessboard for better visibility */
+}
+
+.piece.white {
+  color: white;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 1));
+}
+
+.piece.black {
+  color: black;
+}
+
+.flipped {
+  transform: rotate(180deg);
+}
+
+.square.light {
+  background-color: #f0d9b5;
+}
+
+.square.dark {
+  background-color: #b58863;
+}
+
+.piece {
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.piece.draggable {
+  cursor: grab;
+}
+
+.dragging {
+  opacity: 0.5;
+}
+
+.flipped .piece {
+  transform: rotate(180deg);
+}
